@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "lib": ["ES2022", "DOM"],
+    "types": ["jest", "node", "react"]
+  },
+  "include": ["mobile/**/*.ts", "mobile/**/*.tsx"]
+}
