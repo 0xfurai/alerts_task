@@ -17,6 +17,27 @@
       "displayName": "mobile",
       "preset": "react-native",
       "testMatch": ["<rootDir>/mobile/test/**/*.test.tsx"]
+    },
+    {
+      "displayName": "web",
+      "testEnvironment": "jsdom",
+      "testMatch": ["<rootDir>/web/test/**/*.test.tsx"],
+      "transform": {
+        "^.+\\.tsx?$": [
+          "ts-jest",
+          {
+            "tsconfig": {
+              "target": "ES2022",
+              "module": "CommonJS",
+              "moduleResolution": "Node",
+              "jsx": "react-jsx",
+              "esModuleInterop": true,
+              "lib": ["ES2022", "DOM", "DOM.Iterable"],
+              "types": ["jest", "node", "react"]
+            }
+          }
+        ]
+      }
     }
   ]
 }

@@ -1,10 +1,10 @@
 import { SafeAreaView, StyleSheet } from "react-native";
-import { AlertsScreen } from "./screens/AlertsScreen";
+import { UnitsScreen } from "./screens/UnitsScreen";
 
 export function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <AlertsScreen />
+      <UnitsScreen />
     </SafeAreaView>
   );
 }

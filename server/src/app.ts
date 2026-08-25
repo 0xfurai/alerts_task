@@ -1,8 +1,9 @@
 import express, { type Express } from "express";
 import defaultDb from "./db";
 import { authStub } from "./middleware/authStub";
+import { cors } from "./middleware/cors";
 import { errorHandler } from "./middleware/errorHandler";
-import { createAlertsRouter } from "./routes/alerts";
+import { createUnitsRouter } from "./routes/units";
 import type { Queryable } from "./types/database";
 
 interface AppOptions {
@@ -14,9 +15,10 @@ export function createApp(
 ): Express {
   const app = express();
 
+  app.use(cors);
   app.use(express.json());
   app.use(authStub);
-  app.use("/api/alerts", createAlertsRouter(db));
+  app.use("/api/units", createUnitsRouter(db));
   app.use(errorHandler);
 
   return app;
