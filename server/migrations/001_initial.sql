@@ -1,6 +1,6 @@
 CREATE TABLE users (
   id uuid PRIMARY KEY,
-  role text NOT NULL CHECK (role IN ('technician', 'manager')),
+  role text NOT NULL CHECK (role IN ('technician', 'manager', 'cleaner')),
   name text NOT NULL
 );
 
@@ -8,7 +8,7 @@ CREATE TABLE units (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   name text NOT NULL,
   status text NOT NULL DEFAULT 'available'
-    CHECK (status IN ('available', 'sleep', 'in_use')),
+    CHECK (status IN ('available', 'occupied', 'sleep', 'cleaning')),
   is_active boolean NOT NULL DEFAULT true,
   door_access_code text NOT NULL,
   secret_internal_note text,

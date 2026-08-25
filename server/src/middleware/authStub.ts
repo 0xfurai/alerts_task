@@ -22,6 +22,16 @@ export const DEMO_USERS: Record<string, UserContext> = {
     role: "manager",
     name: "Taylor Lee",
   },
+  dana: {
+    userId: "20000000-0000-4000-8000-000000000005",
+    role: "cleaner",
+    name: "Dana Brooks",
+  },
+  eli: {
+    userId: "20000000-0000-4000-8000-000000000006",
+    role: "cleaner",
+    name: "Eli Navarro",
+  },
 };
 
 export const authStub: RequestHandler = (req, _res, next) => {
